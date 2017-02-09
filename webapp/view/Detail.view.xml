@@ -59,7 +59,7 @@
 					</Column>
 					<Column id="__column5">
 						<header>
-							<Label text="FactuurNummer" id="__label8"/>
+							<Label text="FactNummer" id="__label8"/>
 						</header>
 					</Column>
 					<Column id="__column6">
