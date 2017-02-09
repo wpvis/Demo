@@ -1,0 +1,82 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" controllerName="com.in.controller.Detail">
+	<semantic:DetailPage id="page" navButtonPress="onNavBack" showNavButton="{device>/system/phone}" title="{i18n>detailTitle}" busy="{detailView>/busy}" busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<ObjectHeader id="objectHeader" title="{Name1} - {Telf1}" condensed="false"/>
+			<IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter id="iconTabBarFilter1" icon="sap-icon://hint" tooltip="{i18n>detailIconTabBarInfo}">
+						<content>
+							<Label text="{/#ZC4C_KLANT/Kunnr/@sap:label}" width="25%" id="__label6" design="Bold"/>
+							<Label text="{Kunnr}" width="70%" id="__label11" design="Bold"/>
+							<Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" text="{/#ZC4C_KLANT/Stras/@sap:label}" width="25%" id="__label0" design="Bold"/>
+							<Label xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic" text="{Stras}" width="70%" id="__label1"/>
+							<Label text="{/#ZC4C_KLANT/Pstlz/@sap:label}/{/#ZC4C_KLANT/Ort01/@sap:label}" width="25%" id="__label2" design="Bold"/>
+							<Label width="70%" id="__label3" text="{Pstlz} {Ort01}"/>
+							<Label text="{/#ZC4C_KLANT/Land1/@sap:label}" width="25%" id="__label4" design="Bold"/>
+							<Label text="{Landx}" width="70%" id="__label5"/>
+							<Label text="Telefoon" width="25%" id="__label12" design="Bold"/>
+							<Label text="{Telf1}" width="70%" id="__label13"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://lead" iconColor="Neutral" id="__filter0">
+						<content>
+						    <Label text="Totaal betaald" width="25%" id="__label14" design="Bold"/>
+						    <Label text="{parts:[{path : 'Payed'}, {path : 'Waerk'}], type:'sap.ui.model.type.Currency'}" width="70%" id="__label15"/>
+						    <Label text="Totaal openstaand" width="25%" id="__label16" design="Bold"/>
+						    <Label text="{parts:[{path : 'Open'}, {path : 'Waerk'}], type:'sap.ui.model.type.Currency'}" width="70%" id="__label17"/>
+						</content>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<Table id="lineItemsList" width="auto" items="{ZC4C_FACTUUR_HSet}" updateFinished="onListUpdateFinished" noDataText="{i18n>detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView>/lineItemTableDelay}">
+				<headerToolbar>
+					<Toolbar id="lineItemsToolbar">
+						<Title id="lineItemsHeader" text="{detailView>/lineItemListTitle}"/>
+					</Toolbar>
+				</headerToolbar>
+				<items>
+					<ColumnListItem counter="0" id="__item0">
+						<cells>
+							<Text text="Row 1 Cell 1" maxLines="0" id="__text6"/>
+							<Text text="Row 1 Cell 2" maxLines="0" id="__text7"/>
+							<Text text="Row 1 Cell 3" maxLines="0" id="__text8"/>
+						</cells>
+					</ColumnListItem>
+					<ColumnListItem counter="0" id="__item1">
+						<cells>
+							<Text text="{ path: 'Fkdat', formatter: '.formatter.dateFormat' }" maxLines="0" id="__text27"/>
+							<Text text="{Vbeln}" maxLines="0" id="__text28"/>
+							<Text text="{parts:[{path : 'Netwr'}, {path : 'Waerk'}], type:'sap.ui.model.type.Currency'}" maxLines="0" id="__text29" textAlign="Right"/>
+							<Text text="{Pstat}" maxLines="0" id="__text30"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+				<columns>
+					<Column id="__column4">
+						<header>
+							<Label text="Datum" id="__label7"/>
+						</header>
+					</Column>
+					<Column id="__column5">
+						<header>
+							<Label text="Nummer" id="__label8"/>
+						</header>
+					</Column>
+					<Column id="__column6">
+						<header>
+							<Label text="Bedrag" id="__label9"/>
+						</header>
+					</Column>
+					<Column id="__column7">
+						<header>
+							<Label text="Betaald" id="__label10"/>
+						</header>
+					</Column>
+				</columns>
+			</Table>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+	</semantic:DetailPage>
+</mvc:View>
