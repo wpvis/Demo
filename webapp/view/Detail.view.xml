@@ -20,7 +20,7 @@
 					</IconTabFilter>
 					<IconTabFilter icon="sap-icon://lead" iconColor="Neutral" id="__filter0">
 						<content>
-						    <Label text="Totaal betaald" width="25%" id="__label14" design="Bold"/>
+						    <Label text="Total betaald" width="25%" id="__label14" design="Bold"/>
 						    <Label text="{parts:[{path : 'Payed'}, {path : 'Waerk'}], type:'sap.ui.model.type.Currency'}" width="70%" id="__label15"/>
 						    <Label text="Totaal openstaand" width="25%" id="__label16" design="Bold"/>
 						    <Label text="{parts:[{path : 'Open'}, {path : 'Waerk'}], type:'sap.ui.model.type.Currency'}" width="70%" id="__label17"/>
